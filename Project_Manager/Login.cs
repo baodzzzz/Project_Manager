@@ -1,5 +1,16 @@
+﻿using Microsoft.Win32;
 using Project_Manager.Models;
 using System.DirectoryServices.ActiveDirectory;
+using Project_Manager.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project_Manager
 {
@@ -19,8 +30,8 @@ namespace Project_Manager
             string password = textBox2.Text;
             SetValueForText3 = username;
 
-            if (username.Trim() == "") { MessageBox.Show("Vui l�ng nh?p t�n t�i kho?n"); }
-            else if (password.Trim() == "") { MessageBox.Show("Vui l�ng nh?p m?t kh?u"); }
+            if (username.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản"); }
+            else if (password.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu"); }
 
             else
             {
@@ -28,7 +39,7 @@ namespace Project_Manager
 
                 if (u != null)
                 {
-                    MessageBox.Show("??ng nh?p th�nh c�ng");
+                    MessageBox.Show("Đăng nhập thành công");
                     frmain f = new frmain();
                     f.Show();
                     SetValueForText8 = Convert.ToString(u.RoleId);
@@ -37,9 +48,47 @@ namespace Project_Manager
 
                 else
                 {
-                    MessageBox.Show("T�n ??ng nh?p ho?c m?t kh?u sai");
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai");
                 }
             }
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            register r = new register();
+            r.Show();
+            this.Hide();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                textBox2.PasswordChar = '\0';
+            }
+            else textBox2.PasswordChar = '*';
+        }
+
+        private void login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát khỏi chương trình?", "xác nhận", MessageBoxButtons.YesNo,
+                 MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            forgotpass r = new forgotpass();
+            r.Show();
+            this.Hide();
         }
     }
 }
