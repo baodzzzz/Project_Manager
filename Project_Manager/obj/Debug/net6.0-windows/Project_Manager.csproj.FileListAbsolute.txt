@@ -60,11 +60,7 @@ C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\b
 C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\Project_Manager.csproj.CopyComplete
 C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\Project_Manager.Properties.Resources.resources
-C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\ProjectPrn.Fchangepass.resources
-C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\ProjectPrn.forgotpass.resources
-C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\ProjectPrn.Formadmin.resources
-C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\ProjectPrn.formcustomer.resources
-C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\ProjectPrn.frmain.resources
-C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\ProjectPrn.fVerify.resources
-C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\ProjectPrn.login.resources
-C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\ProjectPrn.register.resources
+C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\Project_Manager.forgotpass.resources
+C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\Project_Manager.frmain.resources
+C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\Project_Manager.fVerify.resources
+C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\Project_Manager.register.resources
