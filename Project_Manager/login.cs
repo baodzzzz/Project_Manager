@@ -1,4 +1,5 @@
-﻿using Project_Manager.Models;
+﻿using Project_Manager.Helper;
+using Project_Manager.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,7 @@ namespace Project_Manager
             
             string username = textBox1.Text;
             string password = textBox2.Text;
+            string checkpass = AccountHelper.HashPassWord(password);
             SetValueForText3 = username;
 
             if (username.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản"); }
@@ -36,7 +38,7 @@ namespace Project_Manager
 
             else
             {
-                User u = context.Users.SingleOrDefault(x => x.Username == username && x.Password == password);
+                User u = context.Users.SingleOrDefault(x => x.Username == username && x.Password == checkpass);
 
                 if (u != null)
                 {

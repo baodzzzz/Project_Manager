@@ -8,6 +8,6 @@
     "**/platforms"
   ],
   "ConnectionStrings": {
-    "MyContr": "Server=DESKTOP-9QVS66L\\HIEU;Database=ProjectPrn;user=PRJ;password=vitobo123;"
+    "MyContr": "Server=DESKTOP-CEENQCD\\QUOCBAO; database=ProjectPrn; user=sa; password=123456"
   }
 }

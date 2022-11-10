@@ -1,4 +1,5 @@
-﻿using Project_Manager.Models;
+﻿using Project_Manager.Helper;
+using Project_Manager.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,6 +84,8 @@ namespace Project_Manager
             string username = tbUserName.Text;
             string password = tbPassword.Text;
             string repass = tbRePassword.Text;
+            string checkpass = AccountHelper.HashPassWord(password);
+
             if (!CheckAccount(username))
             {
                 MessageBox.Show("Vui lòng nhập tên tài khoản dài 6-24 ký tự!");
@@ -124,7 +127,7 @@ namespace Project_Manager
             User u = new User();
             u.Fullname = fullname;
             u.Username = username;
-            u.Password = password;
+            u.Password = checkpass;
             u.Email = email;
             u.RoleId = 1;
             u.Mobile = mobile;
@@ -161,25 +164,6 @@ namespace Project_Manager
 
                     await smtp.SendMailAsync(message);
                 }
-
-                /*SmtpClient clientDetails = new SmtpClient();
-                clientDetails.Port = 587;
-                clientDetails.Host = "smtp.gmail.com";
-                clientDetails.EnableSsl = true;
-                clientDetails.DeliveryMethod = SmtpDeliveryMethod.Network;
-                clientDetails.UseDefaultCredentials = false;
-                clientDetails.Credentials = new NetworkCredential("hieundhe150417@fpt.edu.vn", "paduhi2811");
-                
-
-                MailMessage mailDetails = new MailMessage();
-                mailDetails.From = new MailAddress("hieundhe150417@fpt.edu.vn");
-                mailDetails.To.Add(tbEmail.Text.Trim());
-                mailDetails.Subject = "Code của bạn";
-                mailDetails.Body = RandomChar(6);
-                SetValueForText2 = mailDetails.Body;
-                clientDetails.Send(mailDetails); */
-
-
                 context.Users.Add(u);
                 context.SaveChanges();
 
