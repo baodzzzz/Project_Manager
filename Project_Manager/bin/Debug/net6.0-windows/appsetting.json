@@ -1,0 +1,13 @@
+{
+  "exclude": [
+    "**/bin",
+    "**/bower_components",
+    "**/jspm_packages",
+    "**/node_modules",
+    "**/obj",
+    "**/platforms"
+  ],
+  "ConnectionStrings": {
+    "MyContr": "Server=DESKTOP-9QVS66L\\HIEU;Database=ProjectPrn;user=PRJ;password=vitobo123;"
+  }
+}

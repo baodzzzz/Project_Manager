@@ -64,3 +64,4 @@ C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\o
 C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\Project_Manager.frmain.resources
 C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\Project_Manager.fVerify.resources
 C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\obj\Debug\net6.0-windows\Project_Manager.register.resources
+C:\Users\l\Desktop\PRN PROJECT\Project_Manager\Project_Manager\Project_Manager\bin\Debug\net6.0-windows\appsetting.json

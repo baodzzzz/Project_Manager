@@ -14,6 +14,7 @@ namespace Project_Manager
 {
     public partial class login : Form
     {
+        ProjectPrnContext context = new ProjectPrnContext();
         public login()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace Project_Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ProjectPrnContext context = new ProjectPrnContext();
+            
             string username = textBox1.Text;
             string password = textBox2.Text;
             SetValueForText3 = username;
