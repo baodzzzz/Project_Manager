@@ -133,6 +133,7 @@ namespace Project_Manager
             u.Dob = dob;
             u.Gender = gender ? 1 : 0;
             u.Verify = 0;
+            
             SetValueForText1 = email;
 
             
@@ -157,8 +158,6 @@ namespace Project_Manager
                     message.Body = "After login, please change your password! You new password is: " + RandomChar(6);
                     message.IsBodyHtml = true;
                     message.From = new MailAddress("hieundhe150417@fpt.edu.vn");
-
-
                     await smtp.SendMailAsync(message);
                 }
 
@@ -182,7 +181,6 @@ namespace Project_Manager
 
                 context.Users.Add(u);
                 context.SaveChanges();
-
 
                 
                 if (MessageBox.Show("Đăng ký thành công? Bạn cần xác minh tài khoản để được đăng nhập!!!", "xác nhận", MessageBoxButtons.YesNo,
