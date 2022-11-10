@@ -129,6 +129,8 @@ namespace Project_Manager
             u.Username = username;
             u.Password = checkpass;
 
+
+
             u.Email = email;
             u.RoleId = 1;
             u.Mobile = mobile;
