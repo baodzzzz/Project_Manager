@@ -22,6 +22,7 @@ namespace Project_Manager
 
         public static string SetValueForText8 = "";
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             ProjectPrnContext context = new ProjectPrnContext();
@@ -38,11 +39,21 @@ namespace Project_Manager
 
                 if (u != null)
                 {
-                    MessageBox.Show("Đăng nhập thành công");
-                    frmain f = new frmain();
-                    f.Show();
-                    SetValueForText8 = Convert.ToString(u.RoleId);
-                    this.Hide();
+                    if (u.Verify != 0)
+                    {
+                        MessageBox.Show("Đăng nhập thành công");
+                        frmain f = new frmain();
+                        f.Show();
+                        SetValueForText8 = Convert.ToString(u.RoleId);
+                        this.Hide();
+                    } else
+                    {
+                        MessageBox.Show("Tài khoản chưa được xác minh");
+                        fVerify a = new fVerify();
+                        a.Show();
+                        this.Hide();
+                    }
+                    
                 }
 
                 else
@@ -50,6 +61,8 @@ namespace Project_Manager
                     MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai");
                 }
             }
+
+            
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

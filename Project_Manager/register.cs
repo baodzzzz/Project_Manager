@@ -76,7 +76,7 @@ namespace Project_Manager
         public static string SetValueForText1 = "";
         public static string SetValueForText2 = "";
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_ClickAsync(object sender, EventArgs e)
         {
             ProjectPrnContext context = new ProjectPrnContext();
             string fullname = tbFullName.Text;
@@ -135,26 +135,56 @@ namespace Project_Manager
             u.Verify = 0;
             SetValueForText1 = email;
 
+            
             try
             {
-                SmtpClient clientDetails = new SmtpClient();
+                using (var smtp = new SmtpClient())
+                {
+                    smtp.EnableSsl = true;
+                    smtp.UseDefaultCredentials = false;
+                    var credential = new NetworkCredential
+                    {
+                        UserName = "hieundhe150417@fpt.edu.vn",  // replace with valid value
+                        Password = "paduhi2811"  // replace with valid value
+                    };
+                    smtp.Credentials = credential;
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+
+                    var message = new MailMessage();
+                    message.To.Add(tbEmail.Text.Trim());
+                    message.Subject = "Reset Password...";
+                    message.Body = "After login, please change your password! You new password is: " + RandomChar(6);
+                    message.IsBodyHtml = true;
+                    message.From = new MailAddress("hieundhe150417@fpt.edu.vn");
+
+
+                    await smtp.SendMailAsync(message);
+                }
+
+                /*SmtpClient clientDetails = new SmtpClient();
                 clientDetails.Port = 587;
                 clientDetails.Host = "smtp.gmail.com";
                 clientDetails.EnableSsl = true;
                 clientDetails.DeliveryMethod = SmtpDeliveryMethod.Network;
                 clientDetails.UseDefaultCredentials = false;
-                clientDetails.Credentials = new NetworkCredential("hieubeo2882001@gmail", "paduhi2811");
+                clientDetails.Credentials = new NetworkCredential("hieundhe150417@fpt.edu.vn", "paduhi2811");
+                
 
                 MailMessage mailDetails = new MailMessage();
-                mailDetails.From = new MailAddress("hieubeo2882001@gmail.com");
+                mailDetails.From = new MailAddress("hieundhe150417@fpt.edu.vn");
                 mailDetails.To.Add(tbEmail.Text.Trim());
-
                 mailDetails.Subject = "Code của bạn";
                 mailDetails.Body = RandomChar(6);
                 SetValueForText2 = mailDetails.Body;
-                clientDetails.Send(mailDetails);
+                clientDetails.Send(mailDetails); */
+
+
                 context.Users.Add(u);
                 context.SaveChanges();
+
+
+                
                 if (MessageBox.Show("Đăng ký thành công? Bạn cần xác minh tài khoản để được đăng nhập!!!", "xác nhận", MessageBoxButtons.YesNo,
                MessageBoxIcon.Question) == DialogResult.Yes)
                 {
